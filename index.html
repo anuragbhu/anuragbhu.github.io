@@ -264,7 +264,7 @@
                           </div>
 
                           <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-                            <form method="post" autocomplete="off" name="google-sheet">
+                            <form method="post" autocomplete="off" name="google-sheet" id="google-sheet">
                               <div class="subheading mb-3">Write a message for me below</div>
                               <div class="form-row">
                                 <div class="form-group col-md-6">
@@ -310,7 +310,12 @@
               fetch(scriptURL, { method: 'POST', body: new FormData(form)})
                 .then(response => alert("Thank you! I'll contact you shortly:))"))
                 .catch(error => console.error('Error!', error.message))
+              clearForm()
             })
+
+            function clearForm() {
+                document.getElementById("google-sheet").reset();
+            }
         </script>
 
         <!-- Bootstrap core JS-->
